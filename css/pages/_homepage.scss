@@ -1,0 +1,18 @@
+*{
+    border-image: url("https://mdn.mozillademos.org/files/4127/border.png") 30;
+}
+
+.container{
+    max-width:80%;
+    margin:0 auto;
+    display:flex;
+    flex-wrap:wrap;
+    // border: 10px solid slateblue;
+    p{
+        padding:20px;
+        // border-image: url('./img/01.jpg') 30;
+        border: 10px solid lawngreen;
+        margin:20px;
+    }
+}
+
