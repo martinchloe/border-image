@@ -1,18 +1,50 @@
-*{
-    border-image: url("https://mdn.mozillademos.org/files/4127/border.png") 30;
-}
-
 .container{
     max-width:80%;
     margin:0 auto;
     display:flex;
     flex-wrap:wrap;
-    // border: 10px solid slateblue;
-    p{
+    font-family:Arial;
+    font-size:12px;
+    div{
         padding:20px;
-        // border-image: url('./img/01.jpg') 30;
-        border: 10px solid lawngreen;
         margin:20px;
     }
 }
 
+h1{
+    margin:0 auto;
+    text-transform:uppercase;
+}
+
+.border-image-source{
+    border:50px solid;
+    border-image-source: url(../img/01.png);
+}
+
+.border-image-slice{
+    border-image-slice:15;
+}
+
+.fill{
+    border-image-slice:15 fill;
+}
+
+.border-image-width{
+    border-image-width: 15px 40px; 
+}
+
+.border-image-outset{
+    border-image-outset: 12px;
+    background:red;
+}
+
+.border-image-repeat{
+    border-image-slice:40;
+    border-image-width: 15px 15px; 
+    border-image-repeat:round round;
+}
+
+.border-image{
+    border:50px solid;
+    border-image: url(../img/01.png) 40 / 15px round;
+}

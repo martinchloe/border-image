@@ -5,20 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/e1468f8121.js" crossorigin="anonymous"></script>
     <!-- style -->
     <link rel="stylesheet" href="css/style.min.css">
 </head>
 <body>
     <div class="container">
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aliquid suscipit numquam dolorem, debitis commodi nisi modi nihil doloribus sapiente consequatur enim tempora eos voluptatem totam obcaecati mollitia magni ipsa?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aliquid suscipit numquam dolorem, debitis commodi nisi modi nihil doloribus sapiente consequatur enim tempora eos voluptatem totam obcaecati mollitia magni ipsa?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aliquid suscipit numquam dolorem, debitis commodi nisi modi nihil doloribus sapiente consequatur enim tempora eos voluptatem totam obcaecati mollitia magni ipsa?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aliquid suscipit numquam dolorem, debitis commodi nisi modi nihil doloribus sapiente consequatur enim tempora eos voluptatem totam obcaecati mollitia magni ipsa?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aliquid suscipit numquam dolorem, debitis commodi nisi modi nihil doloribus sapiente consequatur enim tempora eos voluptatem totam obcaecati mollitia magni ipsa?</p>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem aliquid suscipit numquam dolorem, debitis commodi nisi modi nihil doloribus sapiente consequatur enim tempora eos voluptatem totam obcaecati mollitia magni ipsa?</p>
+        <h1>border-image</h1>
+        <div class="border-image-source">
+            <p>
+            1. border-image-source définit l'image que l'on souhaite utiliser pour mettre en forme la bordure. Si border n'est pas définit rien ne s'affiche. Très important, il nécessaire de spécifier "border:solid ...px" sur l'élément sur lequel on veut placer le border-image source.
+            </p>
+            <pre>
+            border:50px solid;
+            border-image-source: url(../img/01.png);
+            </pre>
+        </div>
+        <div class="border-image-source border-image-slice">
+            <p>
+            2. sans la propriété slice l'image se place aux quatres coins du block.
+            border-image-slice permet de découper l'image fournie via la propriété border-image-source en 9 régions : quatre pour les coins, quatre pour les côtés et une pour le milieu. Ces régions sont définies à l'aide de quatre valeurs mesurées depuis les bords vers l'intérieur de l'image.
+            </p>
+            <pre>
+            border:50px solid;
+            border-image-source: url(../img/01.png);
+            border-image-slice:15;
+            </pre>
+        </div>
+        <div class="border-image-source fill">
+            <p>3. si on ajoute la valeur fill, le background blanc par défaut disparait</p>
+            <pre>
+                border:50px solid;
+                border-image-source: url(../img/01.png);
+                border-image-slice:15 fill;
+            </pre>
+        </div>
+        <div class="border-image-source border-image-slice border-image-width">
+            <p>4. border-image-width définit la largeur de la bordure imagée. em/rem/%/px acceptés</p>
+            <pre>
+                border:50px solid;
+                border-image-source: url(../img/01.png);
+                border-image-slice:15;
+                border-image-width: 15px 40px; 
+            </pre>
+        </div>
+        <div class="border-image-source border-image-slice border-image-width border-image-outset">
+            <p>5. border-image-outset définit la distance avec laquelle la bordure est déplacée par rapport à la boîte de bordure</p>
+            <pre>
+                border:50px solid;
+                background:red;
+                border-image-source: url(../img/01.png);
+                border-image-slice:15;
+                border-image-width: 15px 40px; 
+                border-image-outset: 12px;
+            </pre>
+        </div>
+        <div class="border-image-source border-image-slice border-image-width border-image-repeat">
+            <p>6. border-image-repeat définit la façon dont les zones de l'image de bordure sont utilisée pour s'étendre sur chacun des côtés de la bordure. Cette propriété est multi-valuée : une valeur indiquera le comportement pour tous les côtés et deux valeurs indiqueront respectivement le comportement pour les côtés horizontaux et verticaux. Valeurs possible: stretch/repeat/round/space</p>
+            <pre>
+                border:50px solid;
+                border-image-source: url(../img/01.png);
+                border-image-slice:40;
+                border-image-width: 15px 15px; 
+                border-image-repeat:round round;
+            </pre>
+        </div>
+        <div class="border-image">
+            <p>syntaxe raccourcie:
+                border-image: 'border-image-source' || 'border-image-slice' / 'border-image-width'  / border-image-outset' || 'border-image-repeat'
+            </p>
+            <pre>
+                border:50px solid;
+                border-image: url(../img/01.png) 40 / 15px / round;
+            </pre>
+        </div>
     </div>
-    <script src="js/main.js"></script>
+    <!-- <script  src="js/main.js"></script> -->
 </body>
 </html>
